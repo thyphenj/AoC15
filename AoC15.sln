@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-IWasToldThereWouldBeNoMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-PerfectlySphericalHousesInAVacuum", "03-PerfectlySphericalHousesInAVacuum\03-PerfectlySphericalHousesInAVacuum.csproj", "{4CA992E7-F4F9-496E-852D-E44EE44E55E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-TheIdealStockingStuffer", "04-TheIdealStockingStuffer\04-TheIdealStockingStuffer.csproj", "{D19F5FAB-5781-4D92-9E66-9CD69CFB0148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-DoesntHeHaveIntern-ElvesForThis", "05-DoesntHeHaveIntern-ElvesForThis\05-DoesntHeHaveIntern-ElvesForThis.csproj", "{2125092E-9809-4271-99F1-5602D45BE7A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{4CA992E7-F4F9-496E-852D-E44EE44E55E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4CA992E7-F4F9-496E-852D-E44EE44E55E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4CA992E7-F4F9-496E-852D-E44EE44E55E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D19F5FAB-5781-4D92-9E66-9CD69CFB0148}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D19F5FAB-5781-4D92-9E66-9CD69CFB0148}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D19F5FAB-5781-4D92-9E66-9CD69CFB0148}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D19F5FAB-5781-4D92-9E66-9CD69CFB0148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2125092E-9809-4271-99F1-5602D45BE7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2125092E-9809-4271-99F1-5602D45BE7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2125092E-9809-4271-99F1-5602D45BE7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2125092E-9809-4271-99F1-5602D45BE7A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
