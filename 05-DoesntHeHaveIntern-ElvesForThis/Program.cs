@@ -9,17 +9,27 @@ namespace _05_DoesntHeHaveIntern_ElvesForThis
         {
             string[] input = File.ReadAllLines(@"Resources/input.txt");
 
+            Console.WriteLine("05-Doesn't We Have...\n-------------------------------- Part 1");
             int count = 0;
 
             foreach (var s in input)
             {
-                if (Nice(s))
+                if (NiceOne(s))
+                    count++;
+            }
+            Console.WriteLine(count);
+
+            Console.WriteLine("-------------------------------- Part 2");
+            count = 0;
+            foreach (var s in input)
+            {
+                if (NiceTwo(s))
                     count++;
             }
             Console.WriteLine(count);
 
         }
-        static bool Nice(string s)
+        static bool NiceOne(string s)
         {
             int vowels = 0;
             bool dble = false;
@@ -40,6 +50,29 @@ namespace _05_DoesntHeHaveIntern_ElvesForThis
                 }
             }
             return vowels > 2 && dble && !abcd;
+        }
+        static bool NiceTwo(string s)
+        {
+            bool rep = false;
+            bool trp = false;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (i < s.Length - 2)
+                {
+                    if (s[i] == s[i + 2])
+                        trp = true;
+                }
+                if (i < s.Length - 3)
+                {
+                    string dbl = s.Substring(i, 2);
+                    for (int j = i + 2; j < s.Length - 1; j++)
+                        if (dbl == s.Substring(j, 2))
+                            rep = true;
+
+                }
+            }
+            return rep && trp;
         }
     }
 }

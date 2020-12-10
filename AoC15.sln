@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-TheIdealStockingStuffer"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-DoesntHeHaveIntern-ElvesForThis", "05-DoesntHeHaveIntern-ElvesForThis\05-DoesntHeHaveIntern-ElvesForThis.csproj", "{2125092E-9809-4271-99F1-5602D45BE7A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-ProbablyAFireHazard", "06-ProbablyAFireHazard\06-ProbablyAFireHazard.csproj", "{C52742FE-C95F-492D-8ACE-D8F94C9E0B9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-SomeAssemblyReauired", "07-SomeAssemblyReauired\07-SomeAssemblyReauired.csproj", "{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{2125092E-9809-4271-99F1-5602D45BE7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2125092E-9809-4271-99F1-5602D45BE7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2125092E-9809-4271-99F1-5602D45BE7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C52742FE-C95F-492D-8ACE-D8F94C9E0B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C52742FE-C95F-492D-8ACE-D8F94C9E0B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C52742FE-C95F-492D-8ACE-D8F94C9E0B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C52742FE-C95F-492D-8ACE-D8F94C9E0B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
