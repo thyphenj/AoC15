@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-ProbablyAFireHazard", "0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-SomeAssemblyReauired", "07-SomeAssemblyReauired\07-SomeAssemblyReauired.csproj", "{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-Matchsticks", "08-Matchsticks\08-Matchsticks.csproj", "{5D759A54-018D-47CB-8B0A-F9B1A74654BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5741BCCB-1115-495D-86DD-3B34DBFDE3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D759A54-018D-47CB-8B0A-F9B1A74654BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D759A54-018D-47CB-8B0A-F9B1A74654BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D759A54-018D-47CB-8B0A-F9B1A74654BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D759A54-018D-47CB-8B0A-F9B1A74654BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
