@@ -8,14 +8,13 @@ namespace Aoc1503
         static void Main(string[] args)
         {
             string input = File.ReadAllText("input.txt");
-            HashSet<string> positions = new HashSet<string>();
 
             int x = 0;
             int y = 0;
 
-            positions.Add($"{x},{y}");
+            var positions = new HashSet<string> { $"{x},{y}" };
 
-            foreach ( var ch in input)
+            foreach (var ch in input)
             {
                 switch (ch)
                 {
@@ -25,7 +24,7 @@ namespace Aoc1503
                     case '<':
                         x--;
                         break;
-                    case '^' :
+                    case '^':
                         y++;
                         break;
                     case 'v':
@@ -36,7 +35,46 @@ namespace Aoc1503
                 }
                 positions.Add($"{x},{y}");
             }
-            Console.WriteLine(positions.Count);
+            Console.WriteLine($"Part 1 : {positions.Count}");
+
+            // ------------------------------
+            // -- Part 2
+
+            int Sx = 0;
+            int Sy = 0;
+            int Rx = 0;
+            int Ry = 0;
+
+            positions = new HashSet<string> { $"{Sx},{Sy}" };
+
+            bool santa = true;
+            foreach (var ch in input)
+            {
+                switch (ch)
+                {
+                    case '>':
+                        if (santa) Sx++; else Rx++;
+                        break;
+                    case '<':
+                        if (santa) Sx--; else Rx--;
+                        break;
+                    case '^':
+                        if (santa) Sy++; else Ry++;
+                        break;
+                    case 'v':
+                        if (santa) Sy--; else Ry--;
+                        break;
+                    default:
+                        break;
+                }
+                if ( santa)
+                    positions.Add($"{Sx},{Sy}");
+                else
+                    positions.Add($"{Rx},{Ry}");
+                santa = !santa;
+            }
+            Console.WriteLine($"part 2 : { positions.Count}");
+
         }
     }
 }
