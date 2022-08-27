@@ -4,47 +4,58 @@ namespace AoC1507
     public class Wire
     {
         public SignalSource Source;
+        public bool Resolved = false;
 
-        public ushort? Value;
-        public string? SourceWireName;
-        public string? SourceGate;
-        public string? LeftOperator;
-        public string? RiteOperator;
+        public uint? Value;
+        public string Gate = "";
+        public string OpOne = "";
+        public string OpTwo = "";
+        public uint? OpOneValue;
+        public uint? OpTwoValue;
 
-        public Wire(ushort value)
+        public Wire(uint value)
         {
-            Source = SignalSource.Value;
+            Source = SignalSource.Value ;
+            Resolved = true;
 
-            Value = value;
+            Value = value & 0xFFFF;
         }
 
         public Wire(string wireName)
         {
             Source = SignalSource.Wire;
+            Resolved = false;
 
-            SourceWireName = wireName;
+            OpOne = wireName;
         }
 
-        public Wire ( string operand, string wireName)
+        public Wire(string gate, string wireName)
         {
             Source = SignalSource.Gate;
+            Resolved = false;
 
-            LeftOperator = wireName;
-            SourceGate = operand;
+            Gate = gate;
+
+            OpOne = wireName;
+            if (uint.TryParse(OpOne, out var val)) OpOneValue = val; ;
         }
 
-        public Wire(string wireName1, string operand, string wireName2)
+        public Wire(string wireName1, string gate, string wireName2)
         {
             Source = SignalSource.Gate;
+            Resolved = false;
 
-            LeftOperator = wireName1;
-            SourceGate = operand;
-            RiteOperator = wireName2;
+            Gate = gate;
+
+            OpOne = wireName1;
+            if (uint.TryParse(OpOne, out var val)) OpOneValue = val; ;
+            OpTwo = wireName2;
+            if (uint.TryParse(OpTwo, out  val)) OpTwoValue = val; ;
         }
 
         public override string ToString()
         {
-            return $"{Source,5} [{Value}] [{LeftOperator}] [{SourceGate}] [{RiteOperator}]";
+            return $"{Source,5} [{Value}] [{OpOne}] [{Gate}] [{OpTwo}]";
         }
     }
 }
