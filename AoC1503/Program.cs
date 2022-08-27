@@ -1,7 +1,4 @@
-﻿using System;
-using System.IO;
-
-namespace Aoc1503
+﻿namespace AoC1503
 {
     internal class Program
     {

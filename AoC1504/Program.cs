@@ -1,8 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 
-namespace Aoc1504
+namespace AoC1504
 {
     internal class Program
     {
@@ -13,21 +11,29 @@ namespace Aoc1504
             string theHash = "";
             long i = 1;
 
-            while (true)
+            using (MD5 md5 = MD5.Create())
             {
-                using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+                bool done_five = false;
+                bool done_six = false;
+                while (!done_six)
                 {
                     byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes($"{key}{i}");
                     byte[] hashBytes = md5.ComputeHash(inputBytes);
 
                     theHash = Convert.ToHexString(hashBytes);
-                    if (theHash.Substring(0,6) == "000000") break;
-
+                    if (!done_five && theHash.Substring(0, 5) == "00000")
+                    {
+                        done_five = true;
+                        Console.WriteLine($"Part 1 - {i}  {theHash}");
+                    }
+                    else if (theHash.Substring(0, 6) == "000000")
+                    {
+                        done_six = true;
+                        Console.WriteLine($"Part 2 - {i}  {theHash}");
+                    }
                     i++;
                 }
             }
-
-            Console.WriteLine($"{i}  {theHash}");
         }
     }
 }

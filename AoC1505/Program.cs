@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Security.Cryptography;
-
-namespace Aoc1505
+﻿namespace AoC1505
 {
     internal class Program
     {
