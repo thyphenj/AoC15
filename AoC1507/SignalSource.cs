@@ -1,11 +1,6 @@
-﻿using System;
-namespace AoC1507
+﻿public enum SignalSource
 {
-    public enum SignalSource
-    {
-        Gate,
-        Wire,
-        Value
-    }
+    Gate,
+    Wire,
+    Value
 }
-

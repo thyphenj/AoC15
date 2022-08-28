@@ -1,87 +1,67 @@
-﻿using System;
-namespace AoC1507
+﻿public class AllWires
 {
-    public class AllWires
+    public Dictionary<string, Wire> Wires = new Dictionary<string, Wire>();
+
+    public void Add(string line)
     {
-        public Dictionary<string, Wire> Wires = new Dictionary<string, Wire>();
+        string[] tok = line.Split(' ');
 
-        public AllWires()
+        switch (tok.Length)
         {
-        }
+            case 3: // -- value or wirename
 
-        public void Add(string line)
-        {
-            string[] tok = line.Split(' ');
+                Wires.Add(tok[2], new Wire(tok[0]));
+                break;
 
-            switch (tok.Length)
-            {
-                case 3:
-                    uint value = 0;
-                    if (uint.TryParse(tok[0], out value))
-                        Wires.Add(tok[2], new Wire(value));
-                    else
-                        Wires.Add(tok[2], new Wire(tok[0]));
-                    break;
+            case 4: // -- gate : NOT
 
-                case 4:
-                    Wires.Add(tok[3], new Wire(tok[0], tok[1]));
-                    break;
+                Wires.Add(tok[3], new Wire(tok[0], tok[1]));
+                break;
 
-                case 5:
-                    Wires.Add(tok[4], new Wire(tok[0], tok[1], tok[2]));
-                    break;
+            case 5: // -- gate : AND, OR, LSHIFT, RSHIFT
 
-                default:
-                    break;
-            }
-        }
+                Wires.Add(tok[4], new Wire(tok[0], tok[1], tok[2]));
+                break;
 
-        public void Add(string key, Wire wire)
-        {
-            Wires.Add(key, wire);
-        }
-
-        public uint Resolve(string key)
-        {
-            Wire currWire = Wires[key];
-
-            uint retval = 0;
-
-            if (currWire.Value is not null)
-                retval = (uint)currWire.Value;
-
-            else if (currWire.Source == SignalSource.Wire)
-                retval = Resolve(currWire.OpOne);
-
-            else if (currWire.Source == SignalSource.Gate)
-            {
-                var opLeft = currWire.OpOneValue ?? Resolve(currWire.OpOne);
-
-                if (currWire.Gate == "NOT")
-                    retval = ~opLeft;
-
-                else if (currWire.Gate == "LSHIFT")
-                    retval = opLeft << int.Parse(currWire.OpTwo);
-
-                else if (currWire.Gate == "RSHIFT")
-                    retval = opLeft >> int.Parse(currWire.OpTwo);
-
-                else
-                {
-                    var opRite = currWire.OpTwoValue ?? Resolve(currWire.OpTwo);
-
-                    if (currWire.Gate == "AND")
-                        retval = opLeft & opRite;
-
-                    if (currWire.Gate == "OR")
-                        retval = opLeft | opRite;
-                }
-            }
-
-            currWire.Value = retval;
-
-            return retval;
+            default:
+                break;
         }
     }
-}
 
+    public uint Resolve(string key)
+    {
+        Wire currWire = Wires[key];
+
+        if (currWire.Value is not null)
+            currWire.Value = (uint)currWire.Value;
+
+        else if (currWire.Source == SignalSource.Wire)
+            currWire.Value = Resolve(currWire.OpOne);
+
+        else if (currWire.Source == SignalSource.Gate)
+        {
+            var opLeft = currWire.OpOneValue ?? Resolve(currWire.OpOne);
+
+            if (currWire.Gate == "NOT")
+                currWire.Value = ~opLeft;
+
+            else if (currWire.Gate == "LSHIFT")
+                currWire.Value = opLeft << int.Parse(currWire.OpTwo);
+
+            else if (currWire.Gate == "RSHIFT")
+                currWire.Value = opLeft >> int.Parse(currWire.OpTwo);
+
+            else
+            {
+                var opRite = currWire.OpTwoValue ?? Resolve(currWire.OpTwo);
+
+                if (currWire.Gate == "AND")
+                    currWire.Value = opLeft & opRite;
+
+                if (currWire.Gate == "OR")
+                    currWire.Value = opLeft | opRite;
+            }
+        }
+        return currWire.Value ?? throw new Exception("Bugger");
+    }
+}

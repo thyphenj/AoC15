@@ -1,62 +1,59 @@
-﻿using System;
-namespace AoC1507
+﻿public class Wire
 {
-    public class Wire
+    public SignalSource Source;
+
+    public uint? Value;
+    public string Gate = "";
+    public string OpOne = "";
+    public string OpTwo = "";
+    public uint? OpOneValue;
+    public uint? OpTwoValue;
+
+    public Wire(uint val)
     {
-        public SignalSource Source;
-        public bool Resolved = false;
+        Source = SignalSource.Value;
 
-        public uint? Value;
-        public string Gate = "";
-        public string OpOne = "";
-        public string OpTwo = "";
-        public uint? OpOneValue;
-        public uint? OpTwoValue;
+        Value = val & 0xFFFF;
+    }
 
-        public Wire(uint value)
+    public Wire(string wireNameOrValue)
+    {
+        uint val;
+        if (uint.TryParse(wireNameOrValue, out val))
         {
-            Source = SignalSource.Value ;
-            Resolved = true;
-
-            Value = value & 0xFFFF;
+            Source = SignalSource.Value;
+            Value = val & 0xFFFF;
         }
-
-        public Wire(string wireName)
+        else
         {
             Source = SignalSource.Wire;
-            Resolved = false;
-
-            OpOne = wireName;
-        }
-
-        public Wire(string gate, string wireName)
-        {
-            Source = SignalSource.Gate;
-            Resolved = false;
-
-            Gate = gate;
-
-            OpOne = wireName;
-            if (uint.TryParse(OpOne, out var val)) OpOneValue = val; ;
-        }
-
-        public Wire(string wireName1, string gate, string wireName2)
-        {
-            Source = SignalSource.Gate;
-            Resolved = false;
-
-            Gate = gate;
-
-            OpOne = wireName1;
-            if (uint.TryParse(OpOne, out var val)) OpOneValue = val; ;
-            OpTwo = wireName2;
-            if (uint.TryParse(OpTwo, out  val)) OpTwoValue = val; ;
-        }
-
-        public override string ToString()
-        {
-            return $"{Source,5} [{Value}] [{OpOne}] [{Gate}] [{OpTwo}]";
+            OpOne = wireNameOrValue;
         }
     }
-}
 
+    public Wire(string gate, string operand1)
+    {
+        Source = SignalSource.Gate;
+
+        Gate = gate;
+
+        OpOne = operand1;
+
+        uint val = 0;
+        if (uint.TryParse(OpOne, out val)) OpOneValue = val; ;
+    }
+
+    public Wire(string operand1, string gate, string operand2)
+    {
+        Source = SignalSource.Gate;
+
+        Gate = gate;
+
+        OpOne = operand1;
+        OpTwo = operand2;
+
+        uint val = 0;
+        if (uint.TryParse(OpOne, out val)) OpOneValue = val; ;
+        if (uint.TryParse(OpTwo, out val)) OpTwoValue = val; ;
+    }
+}

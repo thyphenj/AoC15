@@ -1,15 +1,8 @@
-﻿namespace AoC1507
-{
-    internal class Program
+﻿    internal class Program
     {
-        static Dictionary<string, Wire> wires = new Dictionary<string, Wire>();
-        static int Depth = 0;
-
-        static void Main(string[] args)
+        static void Main()
         {
-            string filename = "input.txt";
-            //string filename = "input-test.txt";
-            string[] input = File.ReadAllLines(filename);
+            string[] input = File.ReadAllLines("input.txt");
 
             var wires1 = new AllWires();
             var wires2 = new AllWires();
@@ -22,18 +15,16 @@
 
             // -- Part 1
 
-            uint answer1 = wires1.Resolve("a");
+            uint part1 = wires1.Resolve("a");
 
             // -- Part 2
 
-            wires2.Wires["b"].Value = answer1;
+            wires2.Wires["b"].Value = part1;
 
-            uint answer2 = wires2.Resolve("a");
+            uint part2 = wires2.Resolve("a");
 
 
-            Console.WriteLine($"Part 1 - {answer1}");
-            Console.WriteLine($"Part 2 - {answer2}");
+            Console.WriteLine($"Part 1 - {part1}");
+            Console.WriteLine($"Part 2 - {part2}");
         }
-
     }
-}
