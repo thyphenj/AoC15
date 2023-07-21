@@ -1,0 +1,17 @@
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/AoC1513
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/AoC1513.deps.json
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/AoC1513.runtimeconfig.json
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/AoC1513.dll
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/AoC1513.pdb
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.csproj.AssemblyReference.cache
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.GeneratedMSBuildEditorConfig.editorconfig
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.AssemblyInfoInputs.cache
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.AssemblyInfo.cs
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.csproj.CoreCompileInputs.cache
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.dll
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/refint/AoC1513.dll
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.pdb
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/AoC1513.genruntimeconfig.cache
+/Users/t-j/Projects/AoC15/AoC1513/obj/Debug/net7.0/ref/AoC1513.dll
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/input-test.txt
+/Users/t-j/Projects/AoC15/AoC1513/bin/Debug/net7.0/input.txt
