@@ -7,12 +7,18 @@
         public int Flight;
         public int Rest;
 
+        public int Position;
+
+        public int Points;
+
         public Reindeer(string a, string b, string c, string d)
         {
             Name = a;
             Speed = int.Parse(b);
             Flight = int.Parse(c);
             Rest = int.Parse(d);
+
+            Points = 0;
         }
 
         public int Distance(int sec)
@@ -26,6 +32,8 @@
                 dist += extra * Speed;
             else
                 dist += Flight * Speed;
+
+            Position = dist;
 
             return dist;
         }
