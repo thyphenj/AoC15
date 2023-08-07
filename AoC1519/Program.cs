@@ -77,6 +77,7 @@ class Program
                 }
             }
         } while (matches.Count > 0);
+        Console.WriteLine();
         Console.WriteLine($"Part 2 - {replacements}");
     }
 

@@ -4,8 +4,8 @@
     static string Filename = "input.txt";
     static int Steps = 100;
 
-    static string[]? Lines;
-    static bool[,]? Grid;
+    static string[] Lines = {  };
+    static bool[,] Grid = { };
     static int GridSize = 0;
 
     static void Main()
