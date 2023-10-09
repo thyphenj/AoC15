@@ -32,7 +32,6 @@ List<Item> Rings = new List<Item>
             new Item("Defense+2") { Cost = 40, Armour = 2 },
             new Item("Defense+3") { Cost = 80, Armour = 3 }
         };
-
 int minCost = int.MaxValue;
 int maxCost = 0;
 
